@@ -342,14 +342,87 @@ JavaScript Bundle with Popper
 <div class="num">
     <h2 class="w3-center text-center" style="color: deeppink;">Bridegroom Feature Profile</h2>
 
-<div class="w3-content1 w3-section1 mun" style="max-width:500px">
+<!-- <div class="w3-content1 w3-section1 mun" style="max-width:500px">
   <a href="file:///C:/script/b1.html"><img class="mySlides1" src="boy.jpg" style="width: 300px; height: 300px;"></a>
   <!-- <img class="mySlides1" src="bim10.jpg" style="width: 500px; height: 100px;"> -->
   <a href="file:///C:/script/b2.html"><img class="mySlides1" src="bim18.jpg" style="width: 250px; height: 250px;"></a>
   <img class="mySlides1" src="bim12.jpeg" style="width: 300px; height: 300px;">
   <img class="mySlides1" src="bim19.jpg" style="width: 300px; height: 300px;">
   <img class="mySlides1" src="bo.jpg" style="width: 300px; height: 300px;">
-   <img class="mySlides1" src="bim2.jpg" style="width: 300px; height: 300px;">
+   <img class="mySlides1" src="bim2.jpg" style="width: 300px; height: 300px;"> -->
+    <div class="container">
+  <div class="row" id="slider-text">
+    <div class="col-md-6" >
+      <h2>Multi-item Carousel</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="carousel multi-item-carousel slide" id="myCarousel" data-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img1.png" class="img-responsive center-block"></a>
+              <span class="badge">Rajiv Nani</span>
+              
+            
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img2.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Magenta Floral Dress</h4>
+              
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img3.png" class="img-responsive center-block"></a>
+              <span class="badge">20%</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img4.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Red Animated Shirt</h4>
+              
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img5.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Baby Pink Stylish Shirt</h4>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="images/img6.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Blue Wedding Gown</h4>
+              
+            </div>
+          </div>
+
+        </div>
+
+        <div id="slider-control">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive"></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive"></a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
    <a href="file:///C:/script/boy.html"><button class="button" style="margin: 10px;"> Let's find your Solumate </button></a>
    
   <!-- <img class="mySlides1" src="bim14.jpg" style="width: 550px; height: 550px;">
@@ -835,6 +908,27 @@ function carousel() {
   x[slideIndex-1].style.display = "block"; 
   setTimeout(carousel, 2000); 
 }
+              $(document).ready(function(){
+
+$('#myCarousel').carousel({ interval: 3000 });
+
+$('.multi-item-carousel .item').each(function(){
+var itemToClone = $(this);
+
+for (var i=1;i<6;i++) {
+itemToClone = itemToClone.next();
+
+if (!itemToClone.length) {
+itemToClone = $(this).siblings(':first');
+}
+
+itemToClone.children(':first-child').clone()
+.addClass("cloneditem-"+(i))
+.appendTo($(this));
+}
+});
+});
+
         </script>
  
     
